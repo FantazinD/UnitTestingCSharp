@@ -6,13 +6,18 @@ namespace TestNinja.UnitTests
 	[TestFixture]
 	public sealed class ReservationTests
 	{
+		private Reservation _reservation;
+
+		[SetUp]
+		public void SetUp()
+		{
+			_reservation = new Reservation();
+        }
 
 		[Test]
 		public void CanBeCancelledBy_UserIsAdmin_ReturnsTrue()
 		{
-			var reservation = new Reservation();
-
-			bool result = reservation.CanBeCancelledBy(new User() { IsAdmin = true });
+			bool result = _reservation.CanBeCancelledBy(new User() { IsAdmin = true });
 
 			Assert.That(result, Is.EqualTo(true));
 		}
@@ -21,9 +26,9 @@ namespace TestNinja.UnitTests
 		public void CanBeCancelledBy_UserIsReserver_ReturnsTrue()
 		{
 			var user = new User();
-			var reservation = new Reservation() { MadeBy = user };
+			_reservation.MadeBy = user;
 
-			bool result = reservation.CanBeCancelledBy(user);
+            bool result = _reservation.CanBeCancelledBy(user);
 
 			Assert.That(result, Is.EqualTo(true));
 		}
@@ -31,9 +36,9 @@ namespace TestNinja.UnitTests
 		[Test]
 		public void CanBeCancelledBy_UserIsNotReserver_ReturnsFalse()
 		{
-			var reservation = new Reservation() { MadeBy = new User() };
+			_reservation.MadeBy = new User();
 
-			bool result = reservation.CanBeCancelledBy(new User());
+            bool result = _reservation.CanBeCancelledBy(new User());
 
 			Assert.That(result, Is.EqualTo(false));
 		}
