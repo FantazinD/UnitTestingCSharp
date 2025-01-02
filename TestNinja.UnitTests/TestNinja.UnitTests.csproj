@@ -19,4 +19,10 @@
   <ItemGroup>
     <ProjectReference Include="..\TestNinja\TestNinja.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Mocking\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mocking\" />
+  </ItemGroup>
 </Project>
