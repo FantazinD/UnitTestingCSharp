@@ -9,7 +9,7 @@ namespace TestNinja.Mocking
 {
     public class VideoService
     {
-        private IFileReader _fileReader;
+        private readonly IFileReader _fileReader;
 
         public VideoService(IFileReader fileReader = null)
         {
