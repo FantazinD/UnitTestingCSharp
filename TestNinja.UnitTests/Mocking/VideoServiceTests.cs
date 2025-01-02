@@ -8,8 +8,9 @@ namespace TestNinja.UnitTests.Mocking
 		public void ReadVideoTitle_FileIsEmpty_ReturnErrorMessage()
 		{
 			var videoService = new VideoService();
+			videoService.FileReader = new FakeFileReader();
 
-			var result = videoService.ReadVideoTitle(new FakeFileReader());
+			var result = videoService.ReadVideoTitle();
 
 			Assert.That(result, Does.Contain("error").IgnoreCase);
 		}
