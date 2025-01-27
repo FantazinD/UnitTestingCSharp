@@ -6,10 +6,6 @@ namespace TestNinja.UnitTests.Mocking
 	[TestFixture]
 	public class OrderServiceTests
 	{
-		public OrderServiceTests()
-		{
-		}
-
 		[Test]
 		public void PlaceOrder_WhenCalled_StoreTheOrder()
 		{
