@@ -9,10 +9,6 @@ namespace TestNinja.UnitTests.Mocking
 		private Mock<IEmployeeStorage> _employeeStorage;
 		private EmployeeController _employeeController;
 
-		public EmployeeControllerTests()
-		{
-		}
-
 		[SetUp]
 		public void SetUp()
 		{
