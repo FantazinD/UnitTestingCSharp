@@ -4,9 +4,6 @@ namespace TestNinja.UnitTests.Mocking
 	[TestFixture]
 	public class ProductTests
 	{
-		public ProductTests()
-		{
-		}
 
 		[Test]
 		public void GetPrice_CustomerIsGold_Apply30PctDiscout()
